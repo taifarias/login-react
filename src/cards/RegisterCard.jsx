@@ -7,6 +7,8 @@ const RegisterCard = ({ toggleCard }) => {
         date: '',
         nome: '',
         sobrenome: '',
+        email: ' ',
+        telefone: ' ',
         cargo: '',
         senha: ''
       }
@@ -28,37 +30,45 @@ const RegisterCard = ({ toggleCard }) => {
         console.log(funcionario)
       }
     return(
-    <div className="bg-green-100 h-screen justify-center items-start flex">    
-        <section id="register-card" className="bg-slate-400 flex flex-col border-3 border-black rounded-lg w-96 mt-36 p-5 items-center  ">
-          <h1 className="text-lg pb-10">Faça seu cadastro</h1>
+    <div className="bg-400 h-screen justify-center items-start flex">    
+        <section id='login-card'
+             className="bg-500 flex flex-col rounded-lg w-96 mt-36 p-5 items-center py-10">
+        <h1 className="text-xl font-title font-semibold text-100 pb-8">CADASTRO</h1>
 
           <form onSubmit={handleSubmit} id="register-form" className=" flex flex-col">
             <div>
-              <input type="text" placeholder="ID de funcionário" name="id" className="rounded-lg pl-4 mb-2 w-40 mr-5" onChange={handleChange} />
-              <input type="date" name="date" className="rounded-lg pl-4 mb-2 w-40" onChange={handleChange}  />
+              <input type="text" placeholder="ID de funcionário" name="id" className="rounded-xl pl-4 mb-4 w-40 mr-5 py-1" onChange={handleChange} />
+              <input type="date" name="date" className="rounded-xl pl-4 mb-4 w-40 py-1" onChange={handleChange}  />
             </div>
             
             <div>
-              <input type="text" placeholder="Nome" name="nome" className="rounded-lg pl-4 mb-2 w-40 mr-5" onChange={handleChange}  />
-              <input type="text" placeholder="Sobrenome" name="sobrenome" className="rounded-lg pl-4 mb-2 w-40" onChange={handleChange}  />
+              <input type="text" placeholder="Nome" name="nome" className="rounded-xl pl-4 mb-4 w-40 mr-5 py-1" onChange={handleChange}  />
+              <input type="text" placeholder="Sobrenome" name="sobrenome" className="rounded-xl pl-4 mb-4 w-40 py-1" onChange={handleChange}  />
             </div>
 
             <div>
-              <input type="text" placeholder="Cargo" name="cargo" className="rounded-lg pl-4 mb-2 w-40 mr-5" onChange={handleChange}  />
+              <input type="email" placeholder="E-mail" name="nome" className="rounded-xl pl-4 mb-4 w-40 mr-5 py-1" onChange={handleChange}  />
+              <input type="number" placeholder="Telefone" name="sobrenome" className="rounded-xl pl-4 mb-4 w-40 py-1" onChange={handleChange}  />
+            </div>
+
+            <div>
+              <input type="text" placeholder="Cargo" name="cargo" className="rounded-xl pl-4 mb-2 w-40 mr-5 py-1" onChange={handleChange}  />
             
-              <input type="password" placeholder="Senha" name="senha" className="rounded-lg pl-4 w-40" onChange={handleChange} />     
+              <input type="password" placeholder="Senha" name="senha" className="rounded-xl pl-4 w-40 py-1" onChange={handleChange} />     
             </div>
               
 
-            <button type="submit" className="border rounded bg-green-700 text-white px-3 py-1 ml-56 mt-4 mb-4 w-24">Cadastrar</button>
+            <button type="submit" className=" rounded-full bg-300 text-100 px-1 py-1 ml-28 mt-4 mb-4 font-p">Cadastrar</button>
           </form>
 
-          <p>
-             Já tem cadastro?{" "}
-                <button onClick={toggleCard} className="text-blue-500 hover:underline">
-                Volte para o login
-                </button>
-            </p>
+          <p className="flex flex-col text-100 font-p text-sm mt-10">
+                    <p className=""> Já tem cadastro?</p>
+                   
+                    <button onClick={toggleCard} className="text-100 hover:underline">
+                    
+                  Clique Aqui
+                    </button>
+                 </p>
 
       </section>
     </div>
